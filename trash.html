@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>API Testing UI</title>
+    
+</head>
+<body style="background-color: #f2f2f2">
+    <!--<div id="navbar-placeholder"></div>-->
+        <h1>API Testing Interface</h1>
+        <form id="apiForm">
+            <div>
+                <label for="apiUrl">API URL:</label>
+                <input type="url" id="apiUrl" name="apiUrl" required>
+            </div>
+            <div>
+                <label for="requestMethod">Request Method:</label>
+                <select id="requestMethod" name="requestMethod">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+            </div>
+            <div>
+                <label for="requestHeaders">Request Headers:</label>
+                <textarea id="requestHeaders" name="requestHeaders" rows="4"></textarea>
+            </div>
+            <div>
+                <label for="requestBody">Request Body:</label>
+                <textarea id="requestBody" name="requestBody" rows="6"></textarea>
+            </div>
+            <button type="button" onclick="sendRequest()">Send Request</button>
+        </form>
+        <div id="responseContainer">
+            <h2>Response:</h2>
+            <pre id="response"></pre>
+        </div>
+    </div>
+
+    <script>
+        function sendRequest() {
+            const apiUrl = document.getElementById("apiUrl").value;
+            const requestMethod = document.getElementById("requestMethod").value;
+            const requestHeaders = document.getElementById("requestHeaders").value;
+            const requestBody = document.getElementById("requestBody").value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open(requestMethod, apiUrl, true);
+
+            // Set request headers
+            const headersArray = requestHeaders.split('\n');
+            for (const header of headersArray) {
+                const [key, value] = header.split(':');
+                if (key && value) {
+                    xhr.setRequestHeader(key.trim(), value.trim());
+                }
+            }
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    document.getElementById("response").textContent = xhr.responseText;
+                }
+            };
+
+            xhr.send(requestBody);
+        }
+    </script>
+</body>
+</html>

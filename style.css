@@ -1,0 +1,93 @@
+body, p{
+    font-family: Arial, sans-serif;
+}
+.containerParent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.containerchild {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+h1,h3 {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"], input[type="url"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #000000;
+}
+
+#btngroup1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 20px;
+}
+/* Style the tab links */
+#tab {
+    overflow: hidden;
+}
+
+#tab a {
+    float: left;
+    display: block;
+    color: #0066d3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#tab a:hover {
+    background-color: #eceaea;
+}
+
+/* Style the tab content (initially hidden) */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+table {
+    border-collapse: collapse; /* Combines adjacent table borders */
+  }
+  
+td {
+    border: 1px solid #ccc; /* Sets a 1px solid border with a light gray color */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:10px; /* Adds padding around the content */
+  }
+
+th {
+    font-weight:1px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:10px; /* Adds padding around the content */
+}
+  
+

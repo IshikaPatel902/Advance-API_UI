@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <script src="scriptTab.js"></script>
+    <title>Home Page</title>
+</head>
+<body>
+<div id="navbar-placeholder"></div><br>
+<h3>API Testing Interface</h3>
+
+<div class="containerParent">
+    <div id="btngroup1" >
+        <div class="btn-group" style="margin-left:15%;">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            GET
+            </button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">GET</a></li>
+            <li><a class="dropdown-item" href="#">POST</a></li>
+            <li><a class="dropdown-item" href="#">PUT</a></li>
+            <li><a class="dropdown-item" href="#">PATCH</a></li>
+            <li><a class="dropdown-item" href="#">DELETE</a></li>
+            <li><a class="dropdown-item" href="#">HEAD</a></li>
+            <li><a class="dropdown-item" href="#">OPTIONS</a></li>
+            </ul>
+            <input class="form-control me-2" type="search" placeholder="API URL" aria-label="API URL" style="width:500px;">
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+    </div>
+    <!-------------------------------------------------------------------------->
+    <div class="containerchild">
+        <div>
+            <ul class="nav" id="tab">
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link" onclick="openTab(event, 'tab1')">Tab 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link" onclick="openTab(event, 'tab2')">Tab 2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link" onclick="openTab(event, 'tab3')">Tab 3</a>
+                </li>
+            </ul>
+            <div id="tab1" class="tabcontent">
+                <p>Query Params</p>
+                <table >
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>KEY</td>
+                        <td>VALUE</td>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+        
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div id="tab2" class="tabcontent">
+                <p>Headers</p>
+                <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>KEY</td>
+                        <td>VALUE</td>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+        
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div id="tab3" class="tabcontent">
+                <p>JSON Content</p>
+                <div>
+                    <textarea id="requestBody" name="Jsonbody" rows="6"></textarea>
+                </div>
+            </div>
+        
+        </div><br><br>
+        <h4 style="background-color: #007bff; color:white">Response</h4>
+        <div>
+            <table >
+                <thead style="border: 0px;">
+                    <tr>
+                        <th>Status:</th>
+                        <th></th>
+                        <th>Time:</th>
+                        <th></th>
+                        <th>Size:</th>  
+                        <th></th>  
+                    </tr>
+                </thead>
+            </table>
+            <div>
+                <textarea id="requestBody" name="Jsonbody" rows="6"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
